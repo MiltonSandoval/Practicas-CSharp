@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace Db
 {
-    public class DBSQL 
+    public abstract class DBSQL 
     {
         private string _ConnectionString;
         protected SqlConnection _Connection;

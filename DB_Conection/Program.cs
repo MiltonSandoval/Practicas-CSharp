@@ -14,10 +14,14 @@ namespace DB_Conection
         {
             try
             {
-                DBSQL db = new DBSQL("LAPTOP-3MN70QT8", "CursoCsharp", "Milton", "123456");
-                db.Open();
+                BeerDB db = new BeerDB("LAPTOP-3MN70QT8", "CursoCsharp", "Milton", "123456");
 
-                db.Close();
+                List<Beer> Cervezas = db.GetAll();
+
+                foreach (var cerveza in Cervezas)
+                {
+                    Console.WriteLine(cerveza.MarcaId);
+                }
             }
             catch (SqlException ex)
             {
